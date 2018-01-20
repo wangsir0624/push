@@ -1,6 +1,8 @@
 <?php
 namespace Wangjian\Push\Sdk\Youmeng;
 
+use Exception;
+
 abstract class UmengNotification {
 	// The host
 	protected $host = "http://msg.umeng.com";

@@ -1,6 +1,8 @@
 <?php
 namespace Wangjian\Push\Sdk\Youmeng;
 
+use Exception;
+
 abstract class IOSNotification extends UmengNotification {
 	// The array for payload, please see API doc for more information
 	protected $iosPayload = array(

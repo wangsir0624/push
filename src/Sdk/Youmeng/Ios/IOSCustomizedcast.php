@@ -2,6 +2,7 @@
 namespace Wangjian\Push\Sdk\Youmeng\Ios;
 
 use Wangjian\Push\Sdk\Youmeng\IOSNotification;
+use Exception;
 
 class IOSCustomizedcast extends IOSNotification {
 
