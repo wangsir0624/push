@@ -73,7 +73,8 @@ class Client
      * @param array $options  推送选项
      * @return bool
      */
-    public function cast($platform, $type, $options) {
+    public function cast($platform, $type, $options)
+    {
         $notification = $this->getNotification($platform, $type);
 
         $result =  $this->preprocess($notification)
@@ -90,11 +91,12 @@ class Client
      * @return UmengNotification
      * @throws Exception
      */
-    protected function getNotification($platform, $type) {
+    protected function getNotification($platform, $type)
+    {
         $notification = null;
 
-        if($platform == self::PLATFORM_ANDROID) {
-            switch($type) {
+        if ($platform == self::PLATFORM_ANDROID) {
+            switch ($type) {
                 case self::TYPE_UNICAST:
                     $notification = new AndroidUnicast();
                     break;
@@ -116,8 +118,8 @@ class Client
                 default:
                     throw new Exception('unsupported cast type');
             }
-        } else if($platform == self::PLATFORM_IOS) {
-            switch($type) {
+        } elseif ($platform == self::PLATFORM_IOS) {
+            switch ($type) {
                 case self::TYPE_UNICAST:
                     $notification = new IOSUnicast();
                     break;
@@ -151,7 +153,8 @@ class Client
      * @param UmengNotification $notification
      * @return $this
      */
-    protected function preprocess(UmengNotification $notification) {
+    protected function preprocess(UmengNotification $notification)
+    {
         $notification->setAppMasterSecret($this->appMasterSecret);
         $notification->setPredefinedKeyValue('appkey', $this->appKey);
         $notification->setPredefinedKeyValue('production_mode', $this->production);
@@ -168,8 +171,8 @@ class Client
      */
     protected function process(UmengNotification $notification, $options)
     {
-        if(!empty($rawFile = $options['file'])) {
-            if(substr($rawFile, 0, 1) == '@') {
+        if (!empty($rawFile = $options['file'])) {
+            if (substr($rawFile, 0, 1) == '@') {
                 $file = file_get_contents(substr($rawFile, 1));
             } else {
                 $file = $rawFile;
@@ -178,13 +181,13 @@ class Client
             unset($options['file']);
         }
 
-        foreach($options as $key => $value) {
+        foreach ($options as $key => $value) {
             try {
                 $notification->setPredefinedKeyValue($key, $value);
             } catch (Exception $e) {
-                if($notification instanceof IOSNotification) {
+                if ($notification instanceof IOSNotification) {
                     $notification->setCustomizedField($key, $value);
-                } else if($notification instanceof AndroidNotification) {
+                } elseif ($notification instanceof AndroidNotification) {
                     $notification->setExtraField($key, $value);
                 } else {
                     throw new Exception('unsupported notification');
@@ -192,7 +195,7 @@ class Client
             }
         }
 
-        if(!empty($file) && method_exists($notification, 'uploadContents')) {
+        if (!empty($file) && method_exists($notification, 'uploadContents')) {
             call_user_func([$notification, 'uploadContents'], $file);
         }
 
