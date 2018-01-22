@@ -21,12 +21,12 @@ class Client
      * 发送类型常量
      * @const int
      */
-    const TYPE_UNICAST = 1;
-    const TYPE_LISTCAST = 2;
-    const TYPE_FILECAST = 3;
-    const TYPE_BROADCAST = 4;
-    const TYPE_GROUPCAST = 5;
-    const TYPE_CUSTOMIZEDCAST = 6;
+    const TYPE_UNICAST = 'unicast';
+    const TYPE_LISTCAST = 'listcast';
+    const TYPE_FILECAST = 'filecast';
+    const TYPE_BROADCAST = 'broadcast';
+    const TYPE_GROUPCAST = 'groupcast';
+    const TYPE_CUSTOMIZEDCAST = 'customizedcast';
 
     /**
      * platform常量
