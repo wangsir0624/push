@@ -7,9 +7,9 @@ use Wangjian\Push\Sdk\Getui\Protobuf\Type\PBBool;
 
 class ActionChain extends PBMessage
 {
-    var $wired_type = PBMessage::WIRED_LENGTH_DELIMITED;
+    public $wired_type = PBMessage::WIRED_LENGTH_DELIMITED;
 
-    public function __construct($reader = NULL)
+    public function __construct($reader = null)
     {
         parent::__construct($reader);
         $this->fields["1"] = "PBInt";
@@ -53,7 +53,7 @@ class ActionChain extends PBMessage
         $this->fields["162"] = "PBBool";
         $this->values["162"] = "";
         $this->values["162"] = new PBBool();
-        $this->values["162"]->value = FALSE;
+        $this->values["162"]->value = false;
         $this->fields["180"] = "PBString";
         $this->values["180"] = "";
         $this->fields["181"] = "PBString";
@@ -100,452 +100,452 @@ class ActionChain extends PBMessage
         $this->values["381"] = array();
     }
 
-    function actionId()
+    public function actionId()
     {
         return $this->_get_value("1");
     }
 
-    function set_actionId($value)
+    public function set_actionId($value)
     {
         return $this->_set_value("1", $value);
     }
 
-    function type()
+    public function type()
     {
         return $this->_get_value("2");
     }
 
-    function set_type($value)
+    public function set_type($value)
     {
         return $this->_set_value("2", $value);
     }
 
-    function next()
+    public function next()
     {
         return $this->_get_value("3");
     }
 
-    function set_next($value)
+    public function set_next($value)
     {
         return $this->_set_value("3", $value);
     }
 
-    function logo()
+    public function logo()
     {
         return $this->_get_value("100");
     }
 
-    function set_logo($value)
+    public function set_logo($value)
     {
         return $this->_set_value("100", $value);
     }
 
-    function logoURL()
+    public function logoURL()
     {
         return $this->_get_value("101");
     }
 
-    function set_logoURL($value)
+    public function set_logoURL($value)
     {
         return $this->_set_value("101", $value);
     }
 
-    function title()
+    public function title()
     {
         return $this->_get_value("102");
     }
 
-    function set_title($value)
+    public function set_title($value)
     {
         return $this->_set_value("102", $value);
     }
 
-    function text()
+    public function text()
     {
         return $this->_get_value("103");
     }
 
-    function set_text($value)
+    public function set_text($value)
     {
         return $this->_set_value("103", $value);
     }
 
-    function clearable()
+    public function clearable()
     {
         return $this->_get_value("104");
     }
 
-    function set_clearable($value)
+    public function set_clearable($value)
     {
         return $this->_set_value("104", $value);
     }
 
-    function ring()
+    public function ring()
     {
         return $this->_get_value("105");
     }
 
-    function set_ring($value)
+    public function set_ring($value)
     {
         return $this->_set_value("105", $value);
     }
 
-    function buzz()
+    public function buzz()
     {
         return $this->_get_value("106");
     }
 
-    function set_buzz($value)
+    public function set_buzz($value)
     {
         return $this->_set_value("106", $value);
     }
 
-    function bannerURL()
+    public function bannerURL()
     {
         return $this->_get_value("107");
     }
 
-    function set_bannerURL($value)
+    public function set_bannerURL($value)
     {
         return $this->_set_value("107", $value);
     }
 
-    function img()
+    public function img()
     {
         return $this->_get_value("120");
     }
 
-    function set_img($value)
+    public function set_img($value)
     {
         return $this->_set_value("120", $value);
     }
 
-    function buttons($offset)
+    public function buttons($offset)
     {
         return $this->_get_arr_value("121", $offset);
     }
 
-    function add_buttons()
+    public function add_buttons()
     {
         return $this->_add_arr_value("121");
     }
 
-    function set_buttons($index, $value)
+    public function set_buttons($index, $value)
     {
         $this->_set_arr_value("121", $index, $value);
     }
 
-    function remove_last_buttons()
+    public function remove_last_buttons()
     {
         $this->_remove_last_arr_value("121");
     }
 
-    function buttons_size()
+    public function buttons_size()
     {
         return $this->_get_arr_size("121");
     }
 
-    function appid()
+    public function appid()
     {
         return $this->_get_value("140");
     }
 
-    function set_appid($value)
+    public function set_appid($value)
     {
         return $this->_set_value("140", $value);
     }
 
-    function appstartupid()
+    public function appstartupid()
     {
         return $this->_get_value("141");
     }
 
-    function set_appstartupid($value)
+    public function set_appstartupid($value)
     {
         return $this->_set_value("141", $value);
     }
 
-    function autostart()
+    public function autostart()
     {
         return $this->_get_value("142");
     }
 
-    function set_autostart($value)
+    public function set_autostart($value)
     {
         return $this->_set_value("142", $value);
     }
 
-    function failedAction()
+    public function failedAction()
     {
         return $this->_get_value("143");
     }
 
-    function set_failedAction($value)
+    public function set_failedAction($value)
     {
         return $this->_set_value("143", $value);
     }
 
-    function url()
+    public function url()
     {
         return $this->_get_value("160");
     }
 
-    function set_url($value)
+    public function set_url($value)
     {
         return $this->_set_value("160", $value);
     }
 
-    function withcid()
+    public function withcid()
     {
         return $this->_get_value("161");
     }
 
-    function set_withcid($value)
+    public function set_withcid($value)
     {
         return $this->_set_value("161", $value);
     }
 
-    function is_withnettype()
+    public function is_withnettype()
     {
         return $this->_get_value("162");
     }
 
-    function set_is_withnettype($value)
+    public function set_is_withnettype($value)
     {
         return $this->_set_value("162", $value);
     }
 
-    function address()
+    public function address()
     {
         return $this->_get_value("180");
     }
 
-    function set_address($value)
+    public function set_address($value)
     {
         return $this->_set_value("180", $value);
     }
 
-    function content()
+    public function content()
     {
         return $this->_get_value("181");
     }
 
-    function set_content($value)
+    public function set_content($value)
     {
         return $this->_set_value("181", $value);
     }
 
-    function ct()
+    public function ct()
     {
         return $this->_get_value("182");
     }
 
-    function set_ct($value)
+    public function set_ct($value)
     {
         return $this->_set_value("182", $value);
     }
 
-    function flag()
+    public function flag()
     {
         return $this->_get_value("183");
     }
 
-    function set_flag($value)
+    public function set_flag($value)
     {
         return $this->_set_value("183", $value);
     }
 
-    function successedAction()
+    public function successedAction()
     {
         return $this->_get_value("200");
     }
 
-    function set_successedAction($value)
+    public function set_successedAction($value)
     {
         return $this->_set_value("200", $value);
     }
 
-    function uninstalledAction()
+    public function uninstalledAction()
     {
         return $this->_get_value("201");
     }
 
-    function set_uninstalledAction($value)
+    public function set_uninstalledAction($value)
     {
         return $this->_set_value("201", $value);
     }
 
-    function name()
+    public function name()
     {
         return $this->_get_value("220");
     }
 
-    function set_name($value)
+    public function set_name($value)
     {
         return $this->_set_value("220", $value);
     }
 
-    function autoInstall()
+    public function autoInstall()
     {
         return $this->_get_value("223");
     }
 
-    function set_autoInstall($value)
+    public function set_autoInstall($value)
     {
         return $this->_set_value("223", $value);
     }
 
-    function wifiAutodownload()
+    public function wifiAutodownload()
     {
         return $this->_get_value("225");
     }
 
-    function set_wifiAutodownload($value)
+    public function set_wifiAutodownload($value)
     {
         return $this->_set_value("225", $value);
     }
 
-    function forceDownload()
+    public function forceDownload()
     {
         return $this->_get_value("226");
     }
 
-    function set_forceDownload($value)
+    public function set_forceDownload($value)
     {
         return $this->_set_value("226", $value);
     }
 
-    function showProgress()
+    public function showProgress()
     {
         return $this->_get_value("227");
     }
 
-    function set_showProgress($value)
+    public function set_showProgress($value)
     {
         return $this->_set_value("227", $value);
     }
 
-    function post()
+    public function post()
     {
         return $this->_get_value("241");
     }
 
-    function set_post($value)
+    public function set_post($value)
     {
         return $this->_set_value("241", $value);
     }
 
-    function headers()
+    public function headers()
     {
         return $this->_get_value("242");
     }
 
-    function set_headers($value)
+    public function set_headers($value)
     {
         return $this->_set_value("242", $value);
     }
 
-    function groupable()
+    public function groupable()
     {
         return $this->_get_value("260");
     }
 
-    function set_groupable($value)
+    public function set_groupable($value)
     {
         return $this->_set_value("260", $value);
     }
 
-    function mmsTitle()
+    public function mmsTitle()
     {
         return $this->_get_value("280");
     }
 
-    function set_mmsTitle($value)
+    public function set_mmsTitle($value)
     {
         return $this->_set_value("280", $value);
     }
 
-    function mmsURL()
+    public function mmsURL()
     {
         return $this->_get_value("281");
     }
 
-    function set_mmsURL($value)
+    public function set_mmsURL($value)
     {
         return $this->_set_value("281", $value);
     }
 
-    function preload()
+    public function preload()
     {
         return $this->_get_value("300");
     }
 
-    function set_preload($value)
+    public function set_preload($value)
     {
         return $this->_set_value("300", $value);
     }
 
-    function taskid()
+    public function taskid()
     {
         return $this->_get_value("320");
     }
 
-    function set_taskid($value)
+    public function set_taskid($value)
     {
         return $this->_set_value("320", $value);
     }
 
-    function duration()
+    public function duration()
     {
         return $this->_get_value("340");
     }
 
-    function set_duration($value)
+    public function set_duration($value)
     {
         return $this->_set_value("340", $value);
     }
 
-    function date()
+    public function date()
     {
         return $this->_get_value("360");
     }
 
-    function set_date($value)
+    public function set_date($value)
     {
         return $this->_set_value("360", $value);
     }
 
-    function stype()
+    public function stype()
     {
         return $this->_get_value("380");
     }
 
-    function set_stype($value)
+    public function set_stype($value)
     {
         return $this->_set_value("380", $value);
     }
 
-    function field($offset)
+    public function field($offset)
     {
         return $this->_get_arr_value("381", $offset);
     }
 
-    function add_field()
+    public function add_field()
     {
         return $this->_add_arr_value("381");
     }
 
-    function set_field($index, $value)
+    public function set_field($index, $value)
     {
         $this->_set_arr_value("381", $index, $value);
     }
 
-    function remove_last_field()
+    public function remove_last_field()
     {
         $this->_remove_last_arr_value("381");
     }
 
-    function field_size()
+    public function field_size()
     {
         return $this->_get_arr_size("381");
     }

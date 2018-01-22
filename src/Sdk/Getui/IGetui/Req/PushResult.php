@@ -6,9 +6,9 @@ use Wangjian\Push\Sdk\Getui\Protobuf\PBMessage;
 
 class PushResult extends PBMessage
 {
-    var $wired_type = PBMessage::WIRED_LENGTH_DELIMITED;
+    public $wired_type = PBMessage::WIRED_LENGTH_DELIMITED;
 
-    public function __construct($reader = NULL)
+    public function __construct($reader = null)
     {
         parent::__construct($reader);
         $this->fields["1"] = "PushResult_EPushResult";
@@ -27,72 +27,72 @@ class PushResult extends PBMessage
         $this->values["7"] = "";
     }
 
-    function result()
+    public function result()
     {
         return $this->_get_value("1");
     }
 
-    function set_result($value)
+    public function set_result($value)
     {
         return $this->_set_value("1", $value);
     }
 
-    function taskId()
+    public function taskId()
     {
         return $this->_get_value("2");
     }
 
-    function set_taskId($value)
+    public function set_taskId($value)
     {
         return $this->_set_value("2", $value);
     }
 
-    function messageId()
+    public function messageId()
     {
         return $this->_get_value("3");
     }
 
-    function set_messageId($value)
+    public function set_messageId($value)
     {
         return $this->_set_value("3", $value);
     }
 
-    function seqId()
+    public function seqId()
     {
         return $this->_get_value("4");
     }
 
-    function set_seqId($value)
+    public function set_seqId($value)
     {
         return $this->_set_value("4", $value);
     }
 
-    function target()
+    public function target()
     {
         return $this->_get_value("5");
     }
 
-    function set_target($value)
+    public function set_target($value)
     {
         return $this->_set_value("5", $value);
     }
 
-    function info()
+    public function info()
     {
         return $this->_get_value("6");
     }
 
-    function set_info($value)
+    public function set_info($value)
     {
         return $this->_set_value("6", $value);
     }
 
-    function traceId()
+    public function traceId()
     {
         return $this->_get_value("7");
     }
 
-    function set_traceId($value)
+    public function set_traceId($value)
     {
         return $this->_set_value("7", $value);
     }

@@ -2,32 +2,32 @@
 
 namespace Wangjian\Push\Sdk\Getui\IGetui\Utils;
 
-Class Payload
+class Payload
 {
-    var $APS = "aps";
-    var $params;
-    var $alert;
-    var $badge;
-    var $sound = "";
+    public $APS = "aps";
+    public $params;
+    public $alert;
+    public $badge;
+    public $sound = "";
 
-    var $alertBody;
-    var $alertActionLocKey;
-    var $alertLocKey;
-    var $alertLocArgs;
-    var $alertLaunchImage;
-    var $contentAvailable;
+    public $alertBody;
+    public $alertActionLocKey;
+    public $alertLocKey;
+    public $alertLocArgs;
+    public $alertLaunchImage;
+    public $contentAvailable;
 
-    function getParams()
+    public function getParams()
     {
         return $this->params;
     }
 
-    function setParams($params)
+    public function setParams($params)
     {
         $this->params = $params;
     }
 
-    function addParam($key, $obj)
+    public function addParam($key, $obj)
     {
         if ($this->params == null) {
             $this->params = array();
@@ -40,97 +40,97 @@ Class Payload
         $this->params[$key] = $obj;
     }
 
-    function getAlert()
+    public function getAlert()
     {
         return $this->alert;
     }
 
-    function setAlert($alert)
+    public function setAlert($alert)
     {
         $this->alert = $alert;
     }
 
-    function getBadge()
+    public function getBadge()
     {
         return $this->badge;
     }
 
-    function setBadge($badge)
+    public function setBadge($badge)
     {
         $this->badge = $badge;
     }
 
-    function getSound()
+    public function getSound()
     {
         return $this->sound;
     }
 
-    function setSound($sound)
+    public function setSound($sound)
     {
         $this->sound = $sound;
     }
 
-    function getAlertBody()
+    public function getAlertBody()
     {
         return $this->alertBody;
     }
 
-    function setAlertBody($alertBody)
+    public function setAlertBody($alertBody)
     {
         $this->alertBody = $alertBody;
     }
 
-    function getAlertActionLocKey()
+    public function getAlertActionLocKey()
     {
         return $this->alertActionLocKey;
     }
 
-    function setAlertActionLocKey($alertActionLocKey)
+    public function setAlertActionLocKey($alertActionLocKey)
     {
         $this->alertActionLocKey = $alertActionLocKey;
     }
 
-    function getAlertLocKey()
+    public function getAlertLocKey()
     {
         return $this->alertLocKey;
     }
 
-    function setAlertLocKey($alertLocKey)
+    public function setAlertLocKey($alertLocKey)
     {
         $this->alertLocKey = $alertLocKey;
     }
 
-    function getAlertLaunchImage()
+    public function getAlertLaunchImage()
     {
         return $this->alertLaunchImage;
     }
 
-    function setAlertLaunchImage($alertLaunchImage)
+    public function setAlertLaunchImage($alertLaunchImage)
     {
         $this->alertLaunchImage = $alertLaunchImage;
     }
 
-    function getAlertLocArgs()
+    public function getAlertLocArgs()
     {
         return $this->alertLocArgs;
     }
 
-    function setAlertLocArgs($alertLocArgs)
+    public function setAlertLocArgs($alertLocArgs)
     {
         $this->alertLocArgs = $alertLocArgs;
     }
 
-    function getContentAvailable()
+    public function getContentAvailable()
     {
         return $this->contentAvailable;
     }
 
-    function setContentAvailable($contentAvailable)
+    public function setContentAvailable($contentAvailable)
     {
         $this->contentAvailable = $contentAvailable;
     }
 
-    function putIntoJson($key, $value, $obj)
+    public function putIntoJson($key, $value, $obj)
     {
         if ($value != null) {
             $obj[$key] = $value;
@@ -138,7 +138,7 @@ Class Payload
         return $obj;
     }
 
-    function toString()
+    public function toString()
     {
         $object = array();
         $apsObj = array();

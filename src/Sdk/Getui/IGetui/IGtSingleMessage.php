@@ -2,7 +2,7 @@
 
 namespace Wangjian\Push\Sdk\Getui\IGetui;
 
-Class IGtSingleMessage extends IGtMessage
+class IGtSingleMessage extends IGtMessage
 {
     public function __construct()
     {

@@ -29,18 +29,18 @@ abstract class PBMessage
     const WIRED_END_GROUP = 4;
     const WIRED_32BIT = 5;
 
-    var $base128;
+    public $base128;
 
     // here are the field types
-    var $fields = array();
+    public $fields = array();
     // the values for the fields
-    var $values = array();
+    public $values = array();
 
     // type of the class
-    var $wired_type = 2;
+    public $wired_type = 2;
 
     // the value of a class
-    var $value = null;
+    public $value = null;
 
     // modus byte or string parse (byte for productive string for better reading and debuging)
     // 1 = byte, 2 = String
@@ -51,10 +51,10 @@ abstract class PBMessage
     protected $reader;
 
     // chunk which the class not understands
-    var $chunk = '';
+    public $chunk = '';
 
     // variable for Send method
-    var $_d_string = '';
+    public $_d_string = '';
 
     /**
      * Constructor - initialize base128 class
@@ -163,8 +163,9 @@ abstract class PBMessage
         $_begin = $this->reader->get_pointer();
         while ($this->reader->get_pointer() - $_begin < $length) {
             $next = $this->reader->next();
-            if ($next === false)
+            if ($next === false) {
                 break;
+            }
 
             // now get the message type
             $messtypes = $this->get_types($next);
@@ -262,8 +263,9 @@ abstract class PBMessage
      */
     protected function _get_value($index)
     {
-        if ($this->values[$index] == null)
+        if ($this->values[$index] == null) {
             return null;
+        }
         return $this->values[$index]->value;
     }
 
@@ -314,8 +316,9 @@ abstract class PBMessage
         curl_setopt($ch, CURLOPT_POSTFIELDS, 'message=' . urlencode($this->SerializeToString()));
         $result = curl_exec($ch);
 
-        if ($class != null)
+        if ($class != null) {
             $class->parseFromString($this->_d_string);
+        }
         return $this->_d_string;
     }
 
@@ -355,15 +358,16 @@ abstract class PBMessage
             foreach ($this->values as $name => $value) {
                 if (is_array($value)) {
                     foreach ($value as $name2 => $value2) {
-                        if (is_object($value2) AND method_exists($value2, '__destruct')) {
+                        if (is_object($value2) and method_exists($value2, '__destruct')) {
                             $value2->__destruct();
                         }
                         unset($value2);
                     }
-                    if (isset($name2))
+                    if (isset($name2)) {
                         unset($value->$name2);
+                    }
                 } else {
-                    if (is_object($value) AND method_exists($value, '__destruct')) {
+                    if (is_object($value) and method_exists($value, '__destruct')) {
                         $value->__destruct();
                     }
                     unset($value);
@@ -397,5 +401,3 @@ abstract class PBMessage
         return $namespace . $className;
     }
 }
-
-?>

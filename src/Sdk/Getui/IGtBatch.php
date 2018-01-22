@@ -14,12 +14,12 @@ use Wangjian\Push\Sdk\Getui\IGetui\SingleBatchRequest;
  */
 class IGtBatch
 {
-    var $batchId;
-    var $innerMsgList = array();
-    var $seqId = 0;
-    var $APPKEY;
-    var $push;
-    var $lastPostData;
+    public $batchId;
+    public $innerMsgList = array();
+    public $seqId = 0;
+    public $APPKEY;
+    public $push;
+    public $lastPostData;
 
     public function __construct($appkey, $push)
     {
@@ -86,6 +86,5 @@ class IGtBatch
 
     public function setApiUrl($apiUrl)
     {
-
     }
 }

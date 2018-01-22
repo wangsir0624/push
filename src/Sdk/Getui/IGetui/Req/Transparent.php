@@ -6,9 +6,9 @@ use Wangjian\Push\Sdk\Getui\Protobuf\PBMessage;
 
 class Transparent extends PBMessage
 {
-    var $wired_type = PBMessage::WIRED_LENGTH_DELIMITED;
+    public $wired_type = PBMessage::WIRED_LENGTH_DELIMITED;
 
-    public function __construct($reader = NULL)
+    public function __construct($reader = null)
     {
         parent::__construct($reader);
         $this->fields["1"] = "PBString";
@@ -31,126 +31,126 @@ class Transparent extends PBMessage
         $this->values["9"] = array();
     }
 
-    function id()
+    public function id()
     {
         return $this->_get_value("1");
     }
 
-    function set_id($value)
+    public function set_id($value)
     {
         return $this->_set_value("1", $value);
     }
 
-    function action()
+    public function action()
     {
         return $this->_get_value("2");
     }
 
-    function set_action($value)
+    public function set_action($value)
     {
         return $this->_set_value("2", $value);
     }
 
-    function taskId()
+    public function taskId()
     {
         return $this->_get_value("3");
     }
 
-    function set_taskId($value)
+    public function set_taskId($value)
     {
         return $this->_set_value("3", $value);
     }
 
-    function appKey()
+    public function appKey()
     {
         return $this->_get_value("4");
     }
 
-    function set_appKey($value)
+    public function set_appKey($value)
     {
         return $this->_set_value("4", $value);
     }
 
-    function appId()
+    public function appId()
     {
         return $this->_get_value("5");
     }
 
-    function set_appId($value)
+    public function set_appId($value)
     {
         return $this->_set_value("5", $value);
     }
 
-    function messageId()
+    public function messageId()
     {
         return $this->_get_value("6");
     }
 
-    function set_messageId($value)
+    public function set_messageId($value)
     {
         return $this->_set_value("6", $value);
     }
 
-    function pushInfo()
+    public function pushInfo()
     {
         return $this->_get_value("7");
     }
 
-    function set_pushInfo($value)
+    public function set_pushInfo($value)
     {
         return $this->_set_value("7", $value);
     }
 
-    function actionChain($offset)
+    public function actionChain($offset)
     {
         return $this->_get_arr_value("8", $offset);
     }
 
-    function add_actionChain()
+    public function add_actionChain()
     {
         return $this->_add_arr_value("8");
     }
 
-    function set_actionChain($index, $value)
+    public function set_actionChain($index, $value)
     {
         $this->_set_arr_value("8", $index, $value);
     }
 
-    function remove_last_actionChain()
+    public function remove_last_actionChain()
     {
         $this->_remove_last_arr_value("8");
     }
 
-    function actionChain_size()
+    public function actionChain_size()
     {
         return $this->_get_arr_size("8");
     }
 
-    function condition($offset)
+    public function condition($offset)
     {
         $v = $this->_get_arr_value("9", $offset);
         return $v->get_value();
     }
 
-    function append_condition($value)
+    public function append_condition($value)
     {
         $v = $this->_add_arr_value("9");
         $v->set_value($value);
     }
 
-    function set_condition($index, $value)
+    public function set_condition($index, $value)
     {
         $v = new $this->fields["9"]();
         $v->set_value($value);
         $this->_set_arr_value("9", $index, $v);
     }
 
-    function remove_last_condition()
+    public function remove_last_condition()
     {
         $this->_remove_last_arr_value("9");
     }
 
-    function condition_size()
+    public function condition_size()
     {
         return $this->_get_arr_size("9");
     }

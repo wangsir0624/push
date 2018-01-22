@@ -17,7 +17,7 @@ class YoumengAdapter extends AbstractAdapter
 
     public function cast(SendOption $option)
     {
-        if(!($option instanceof YoumengSendOption)) {
+        if (!($option instanceof YoumengSendOption)) {
             throw new Exception('invalid send option for YoumengAdapter');
         }
 

@@ -12,44 +12,44 @@ class IGtLinkTemplate extends IGtBaseTemplate
     /**
      *String
      */
-    var $text;
+    public $text;
 
     /**
      *String
      */
-    var $title;
+    public $title;
 
     /**
      *String
      */
-    var $logo;
+    public $logo;
 
-    var $logoURL;
-
-    /**
-     *boolean
-     */
-    var $isRing;
+    public $logoURL;
 
     /**
      *boolean
      */
-    var $isVibrate;
+    public $isRing;
+
+    /**
+     *boolean
+     */
+    public $isVibrate;
 
     /**
      *String
      */
-    var $url;
+    public $url;
 
     /**
      *boolean
      */
-    var $isClearable;
+    public $isClearable;
 
     /**
      *int
      */
-    var $notifyStyle = 0;
+    public $notifyStyle = 0;
 
     public function getActionChain()
     {
@@ -143,52 +143,52 @@ class IGtLinkTemplate extends IGtBaseTemplate
         return $actionChains;
     }
 
-    function get_pushType()
+    public function get_pushType()
     {
         return 'LinkMsg';
     }
 
-    function set_text($text)
+    public function set_text($text)
     {
         $this->text = $text;
     }
 
-    function set_title($title)
+    public function set_title($title)
     {
         $this->title = $title;
     }
 
-    function set_logo($logo)
+    public function set_logo($logo)
     {
         $this->logo = $logo;
     }
 
-    function set_logoURL($logoURL)
+    public function set_logoURL($logoURL)
     {
         $this->logoURL = $logoURL;
     }
 
-    function set_url($url)
+    public function set_url($url)
     {
         $this->url = $url;
     }
 
-    function set_isRing($isRing)
+    public function set_isRing($isRing)
     {
         $this->isRing = $isRing;
     }
 
-    function set_isVibrate($isVibrate)
+    public function set_isVibrate($isVibrate)
     {
         $this->isVibrate = $isVibrate;
     }
 
-    function set_isClearable($isClearable)
+    public function set_isClearable($isClearable)
     {
         $this->isClearable = $isClearable;
     }
 
-    function set_notifyStyle($notifyStyle)
+    public function set_notifyStyle($notifyStyle)
     {
         if ($notifyStyle != 1) {
             $this->notifyStyle = 0;

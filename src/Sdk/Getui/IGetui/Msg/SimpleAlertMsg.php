@@ -4,7 +4,7 @@ namespace Wangjian\Push\Sdk\Getui\IGetui\Msg;
 
 class SimpleAlertMsg implements ApnMsg
 {
-    var $alertMsg;
+    public $alertMsg;
 
     public function get_alertMsg()
     {

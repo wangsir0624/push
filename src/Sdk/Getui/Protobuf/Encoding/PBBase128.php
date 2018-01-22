@@ -9,7 +9,7 @@ namespace Wangjian\Push\Sdk\Getui\Protobuf\Encoding;
 class PBBase128
 {
     // modus for output
-    var $modus = 1;
+    public $modus = 1;
 
     /**
      * @param int $modus - 1=Byte 2=String
@@ -29,8 +29,9 @@ class PBBase128
         $string = decbin($number);
         if (strlen($string) < 8) {
             $hexstring = dechex(bindec($string));
-            if (strlen($hexstring) % 2 == 1)
+            if (strlen($hexstring) % 2 == 1) {
                 $hexstring = '0' . $hexstring;
+            }
 
             if ($this->modus == 1) {
                 return $this->hex_to_str($hexstring);
@@ -51,8 +52,9 @@ class PBBase128
             $string_array[] = $pre . substr($string, strlen($string) - 7, 7);
             $string = substr($string, 0, strlen($string) - 7);
             $pre = '1';
-            if ($string == '0000000')
+            if ($string == '0000000') {
                 break;
+            }
         }
 
         $hexstring = '';
@@ -106,5 +108,3 @@ class PBBase128
         return $str;
     }
 }
-
-?>

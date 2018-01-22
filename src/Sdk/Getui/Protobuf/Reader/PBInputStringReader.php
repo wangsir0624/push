@@ -7,7 +7,7 @@ namespace Wangjian\Push\Sdk\Getui\Protobuf\Reader;
  */
 class PBInputStringReader extends PBInputReader
 {
-    var $length = 0;
+    public $length = 0;
 
     public function __construct($string)
     {
@@ -32,8 +32,9 @@ class PBInputStringReader extends PBInputReader
             $string = $this->string[$this->pointer];
             $this->pointer++;
 
-            if ($is_string == true)
+            if ($is_string == true) {
                 return ord($string);
+            }
 
             $value = decbin(ord($string));
 
@@ -48,5 +49,3 @@ class PBInputStringReader extends PBInputReader
         }
     }
 }
-
-?>

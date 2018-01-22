@@ -9,7 +9,7 @@ use Wangjian\Push\Sdk\Getui\Protobuf\PBMessage;
  */
 class PBInt extends PBScalar
 {
-    var $wired_type = PBMessage::WIRED_VARINT;
+    public $wired_type = PBMessage::WIRED_VARINT;
 
     /**
      * Parses the message for this type
@@ -39,5 +39,3 @@ class PBInt extends PBScalar
         return $string;
     }
 }
-
-?>

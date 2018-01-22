@@ -9,12 +9,12 @@ use Wangjian\Push\Sdk\Getui\IGetui\Msg\DictionaryAlertMsg;
 
 class IGtBaseTemplate
 {
-    var $appId;
-    var $appkey;
-    var $pushInfo;
-    var $duration;
+    public $appId;
+    public $appkey;
+    public $pushInfo;
+    public $duration;
 
-    function get_transparent()
+    public function get_transparent()
     {
         $transparent = new Transparent();
         $transparent->set_id('');
@@ -39,12 +39,12 @@ class IGtBaseTemplate
         //return $transparent->condition(0);
     }
 
-    function getActionChain()
+    public function getActionChain()
     {
         return $list = array();
     }
 
-    function get_durcondition()
+    public function get_durcondition()
     {
         if ($this->duration == null || $this->duration == '') {
             return "";
@@ -53,13 +53,12 @@ class IGtBaseTemplate
         return "duration=" . $this->duration;
     }
 
-    function get_duration()
+    public function get_duration()
     {
         return $this->duration;
     }
 
-    function set_duration($begin, $end)
-
+    public function set_duration($begin, $end)
     {
         date_default_timezone_set('asia/shanghai');
         /*  //for test
@@ -68,31 +67,32 @@ class IGtBaseTemplate
         */
         $ss = (string)strtotime($begin) * 1000;
         $e = (string)strtotime($end) * 1000;
-        if ($ss <= 0 || $e <= 0)
+        if ($ss <= 0 || $e <= 0) {
             throw new \Exception("DateFormat: yyyy-MM-dd HH:mm:ss");
-        if ($ss > $e)
+        }
+        if ($ss > $e) {
             throw new \Exception("startTime should be smaller than endTime");
+        }
 
         $this->duration = $ss . "-" . $e;
-
     }
 
-    function get_transmissionContent()
+    public function get_transmissionContent()
     {
         return null;
     }
 
-    function get_pushType()
+    public function get_pushType()
     {
         return null;
     }
 
-    function get_actionChain()
+    public function get_actionChain()
     {
         return null;
     }
 
-    function get_pushInfo()
+    public function get_pushInfo()
     {
         if ($this->pushInfo == null) {
             $this->pushInfo = new PushInfo();
@@ -103,7 +103,7 @@ class IGtBaseTemplate
         return $this->pushInfo;
     }
 
-    function set_pushInfo($actionLocKey, $badge, $message, $sound, $payload, $locKey, $locArgs, $launchImage, $contentAvailable = 0)
+    public function set_pushInfo($actionLocKey, $badge, $message, $sound, $payload, $locKey, $locArgs, $launchImage, $contentAvailable = 0)
     {
         $this->pushInfo = new PushInfo();
         $this->pushInfo->set_invalidAPN(true);
@@ -152,7 +152,7 @@ class IGtBaseTemplate
         $this->set_apnInfo($apn);
     }
 
-    function set_apnInfo($payload)
+    public function set_apnInfo($payload)
     {
         if ($payload == null) {
             return;
@@ -175,17 +175,17 @@ class IGtBaseTemplate
         $this->pushInfo->set_invalidAPN(false);
     }
 
-    function set_appId($appId)
+    public function set_appId($appId)
     {
         $this->appId = $appId;
     }
 
-    function set_appkey($appkey)
+    public function set_appkey($appkey)
     {
         $this->appkey = $appkey;
     }
 
-    function abslength($str)
+    public function abslength($str)
     {
         if (empty($str)) {
             return 0;
@@ -198,5 +198,4 @@ class IGtBaseTemplate
             return count($ar[0]);
         }
     }
-
 }

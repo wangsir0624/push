@@ -89,12 +89,11 @@ class Client
      */
     public function cast($target, $templateConfigs, $messageConfigs)
     {
-
         $pushMode = '';
-        if(empty($target)) {
+        if (empty($target)) {
             $pushMode = self::MODE_APP;
         } else {
-            if(count($target) > 1) {
+            if (count($target) > 1) {
                 $pushMode = self::MODE_LIST;
             } else {
                 $pushMode = self::MODE_SINGLE;
@@ -111,7 +110,7 @@ class Client
         $message = $this->prepareMessage($template, $messageConfigs, $pushMode);
 
         $rep = null;
-        switch($pushMode) {
+        switch ($pushMode) {
             case self::MODE_SINGLE:
                 $targetClient = new IGtTarget();
                 $targetClient->set_appId($this->app_id);
@@ -151,7 +150,7 @@ class Client
     protected function prepareTemplate($templateConfigs)
     {
         $template = null;
-        switch($templateConfigs['type']) {
+        switch ($templateConfigs['type']) {
             case self::TEMPLATE_NOTIFICATION:
                 $template = new IGtNotificationTemplate();
                 break;
@@ -171,10 +170,10 @@ class Client
                 throw new Exception('unsupported template');
         }
 
-        foreach($templateConfigs as $key => $value) {
+        foreach ($templateConfigs as $key => $value) {
             $method = 'set_' . lcfirst($key);
 
-            if(method_exists($template, $method)) {
+            if (method_exists($template, $method)) {
                 call_user_func([$template, $method], $value);
             }
         }
@@ -193,7 +192,7 @@ class Client
     protected function prepareMessage(IGtBaseTemplate $template, $messageConfigs, $pushMode)
     {
         $message = null;
-        switch($pushMode) {
+        switch ($pushMode) {
             case self::MODE_SINGLE:
                 $message = new IGtSingleMessage();
                 break;
@@ -209,10 +208,10 @@ class Client
 
         $message->set_data($template);
 
-        foreach($messageConfigs as $key => $value) {
+        foreach ($messageConfigs as $key => $value) {
             $method = 'set_' . lcfirst($key);
 
-            if(method_exists($message, $method)) {
+            if (method_exists($message, $method)) {
                 call_user_func([$message, $method], $value);
             }
         }
@@ -220,4 +219,3 @@ class Client
         return $message;
     }
 }
-

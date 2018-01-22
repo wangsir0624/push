@@ -6,7 +6,7 @@ use Wangjian\Push\Sdk\Getui\Exception\GetuiException;
 
 class HttpManager
 {
-    static $curls = array();
+    public static $curls = array();
 
     private static function httpPost($url, $data, $gzip, $action)
     {

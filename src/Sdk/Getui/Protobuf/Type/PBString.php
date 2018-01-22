@@ -9,7 +9,7 @@ use Wangjian\Push\Sdk\Getui\Protobuf\PBMessage;
  */
 class PBString extends PBScalar
 {
-    var $wired_type = PBMessage::WIRED_LENGTH_DELIMITED;
+    public $wired_type = PBMessage::WIRED_LENGTH_DELIMITED;
 
     /**
      * Parses the message for this type
@@ -45,5 +45,3 @@ class PBString extends PBScalar
         return $string;
     }
 }
-
-?>

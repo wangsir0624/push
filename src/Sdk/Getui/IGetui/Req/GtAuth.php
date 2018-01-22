@@ -6,9 +6,9 @@ use Wangjian\Push\Sdk\Getui\Protobuf\PBMessage;
 
 class GtAuth extends PBMessage
 {
-    var $wired_type = PBMessage::WIRED_LENGTH_DELIMITED;
+    public $wired_type = PBMessage::WIRED_LENGTH_DELIMITED;
 
-    public function __construct($reader = NULL)
+    public function __construct($reader = null)
     {
         parent::__construct($reader);
         $this->fields["1"] = "PBString";
@@ -21,42 +21,42 @@ class GtAuth extends PBMessage
         $this->values["4"] = "";
     }
 
-    function sign()
+    public function sign()
     {
         return $this->_get_value("1");
     }
 
-    function set_sign($value)
+    public function set_sign($value)
     {
         return $this->_set_value("1", $value);
     }
 
-    function appkey()
+    public function appkey()
     {
         return $this->_get_value("2");
     }
 
-    function set_appkey($value)
+    public function set_appkey($value)
     {
         return $this->_set_value("2", $value);
     }
 
-    function timestamp()
+    public function timestamp()
     {
         return $this->_get_value("3");
     }
 
-    function set_timestamp($value)
+    public function set_timestamp($value)
     {
         return $this->_set_value("3", $value);
     }
 
-    function seqId()
+    public function seqId()
     {
         return $this->_get_value("4");
     }
 
-    function set_seqId($value)
+    public function set_seqId($value)
     {
         return $this->_set_value("4", $value);
     }

@@ -6,9 +6,9 @@ use Wangjian\Push\Sdk\Getui\Protobuf\PBMessage;
 
 class OSMessage extends PBMessage
 {
-    var $wired_type = PBMessage::WIRED_LENGTH_DELIMITED;
+    public $wired_type = PBMessage::WIRED_LENGTH_DELIMITED;
 
-    public function __construct($reader = NULL)
+    public function __construct($reader = null)
     {
         parent::__construct($reader);
         $this->fields["2"] = "PBBool";
@@ -27,72 +27,72 @@ class OSMessage extends PBMessage
         $this->values["8"] = "";
     }
 
-    function isOffline()
+    public function isOffline()
     {
         return $this->_get_value("2");
     }
 
-    function set_isOffline($value)
+    public function set_isOffline($value)
     {
         return $this->_set_value("2", $value);
     }
 
-    function offlineExpireTime()
+    public function offlineExpireTime()
     {
         return $this->_get_value("3");
     }
 
-    function set_offlineExpireTime($value)
+    public function set_offlineExpireTime($value)
     {
         return $this->_set_value("3", $value);
     }
 
-    function transparent()
+    public function transparent()
     {
         return $this->_get_value("4");
     }
 
-    function set_transparent($value)
+    public function set_transparent($value)
     {
         return $this->_set_value("4", $value);
     }
 
-    function extraData()
+    public function extraData()
     {
         return $this->_get_value("5");
     }
 
-    function set_extraData($value)
+    public function set_extraData($value)
     {
         return $this->_set_value("5", $value);
     }
 
-    function msgType()
+    public function msgType()
     {
         return $this->_get_value("6");
     }
 
-    function set_msgType($value)
+    public function set_msgType($value)
     {
         return $this->_set_value("6", $value);
     }
 
-    function msgTraceFlag()
+    public function msgTraceFlag()
     {
         return $this->_get_value("7");
     }
 
-    function set_msgTraceFlag($value)
+    public function set_msgTraceFlag($value)
     {
         return $this->_set_value("7", $value);
     }
 
-    function priority()
+    public function priority()
     {
         return $this->_get_value("8");
     }
 
-    function set_priority($value)
+    public function set_priority($value)
     {
         return $this->_set_value("8", $value);
     }

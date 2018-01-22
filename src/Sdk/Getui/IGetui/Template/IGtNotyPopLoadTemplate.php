@@ -14,79 +14,79 @@ class IGtNotyPopLoadTemplate extends IGtBaseTemplate
     /**
      * 通知栏图标
      */
-    var $notyIcon;
+    public $notyIcon;
     /**
      * 通知栏标题
      */
-    var $logoURL;
+    public $logoURL;
 
-    var $notyTitle;
+    public $notyTitle;
     /**
      * 通知栏内容
      */
-    var $notyContent;
+    public $notyContent;
     /**
      * 通知是否可清楚
      */
-    var $isCleared = true;
+    public $isCleared = true;
     /**
      * 是否响铃
      */
-    var $isBelled = true;
+    public $isBelled = true;
     /**
      * 是否震动
      */
-    var $isVibrationed = true;
+    public $isVibrationed = true;
 
     /**
      * 弹框标题
      */
-    var $popTitle;
+    public $popTitle;
     /**
      * 弹框内容
      */
-    var $popContent;
+    public $popContent;
 
     /**
      * 弹框图片
      */
-    var $popImage;
+    public $popImage;
     /**
      * 左边按钮名称
      */
-    var $popButton1;
+    public $popButton1;
     /**
      * 右边按钮名称
      */
-    var $popButton2;
+    public $popButton2;
 
     /**
      * 下载图标
      */
-    var $loadIcon;
+    public $loadIcon;
 
     /**
      * 下载标题
      */
-    var $loadTitle;
+    public $loadTitle;
 
     /**
      * 下载地址
      */
-    var $loadUrl;
+    public $loadUrl;
     /**
      * 是否自动安装
      */
-    var $isAutoInstall = false;
+    public $isAutoInstall = false;
     /**
      * 是否激活
      */
-    var $isActived = false;
+    public $isActived = false;
 
-    var $symbianMark = "";
-    var $androidMark = "";
-    var $iosMark = "";
-    var $notifyStyle = 0;
+    public $symbianMark = "";
+    public $androidMark = "";
+    public $iosMark = "";
+    public $notifyStyle = 0;
 
     public function getActionChain()
     {
@@ -201,112 +201,112 @@ class IGtNotyPopLoadTemplate extends IGtBaseTemplate
         return $actionChains;
     }
 
-    function set_notyIcon($notyIcon)
+    public function set_notyIcon($notyIcon)
     {
         $this->notyIcon = $notyIcon;
     }
 
-    function set_notyTitle($notyTitle)
+    public function set_notyTitle($notyTitle)
     {
         $this->notyTitle = $notyTitle;
     }
 
-    function set_logoURL($logoURL)
+    public function set_logoURL($logoURL)
     {
         $this->logoURL = $logoURL;
     }
 
-    function set_notyContent($notyContent)
+    public function set_notyContent($notyContent)
     {
         $this->notyContent = $notyContent;
     }
 
-    function set_isCleared($isCleared)
+    public function set_isCleared($isCleared)
     {
         $this->isCleared = $isCleared;
     }
 
-    function set_isBelled($isBelled)
+    public function set_isBelled($isBelled)
     {
         $this->isBelled = $isBelled;
     }
 
-    function set_isVibrationed($isVibrationed)
+    public function set_isVibrationed($isVibrationed)
     {
         $this->isVibrationed = $isVibrationed;
     }
 
-    function set_popTitle($popTitle)
+    public function set_popTitle($popTitle)
     {
         $this->popTitle = $popTitle;
     }
 
-    function set_popContent($popContent)
+    public function set_popContent($popContent)
     {
         $this->popContent = $popContent;
     }
 
-    function set_popImage($popImage)
+    public function set_popImage($popImage)
     {
         $this->popImage = $popImage;
     }
 
-    function set_popButton1($popButton1)
+    public function set_popButton1($popButton1)
     {
         $this->popButton1 = $popButton1;
     }
 
-    function set_popButton2($popButton2)
+    public function set_popButton2($popButton2)
     {
         $this->popButton2 = $popButton2;
     }
 
-    function set_loadIcon($loadIcon)
+    public function set_loadIcon($loadIcon)
     {
         $this->loadIcon = $loadIcon;
     }
 
-    function set_loadTitle($loadTitle)
+    public function set_loadTitle($loadTitle)
     {
         $this->loadTitle = $loadTitle;
     }
 
-    function set_loadUrl($loadUrl)
+    public function set_loadUrl($loadUrl)
     {
         $this->loadUrl = $loadUrl;
     }
 
-    function set_isAutoInstall($isAutoInstall)
+    public function set_isAutoInstall($isAutoInstall)
     {
         $this->isAutoInstall = $isAutoInstall;
     }
 
-    function set_isActived($isActived)
+    public function set_isActived($isActived)
     {
         $this->isActived = $isActived;
     }
 
-    function set_symbianMark($symbianMark)
+    public function set_symbianMark($symbianMark)
     {
         $this->symbianMark = $symbianMark;
     }
 
-    function set_androidMark($androidMark)
+    public function set_androidMark($androidMark)
     {
         $this->androidMark = $androidMark;
     }
 
-    function set_iosMark($iosMark)
+    public function set_iosMark($iosMark)
     {
         $this->iosMark = $iosMark;
     }
 
-    function get_pushType()
+    public function get_pushType()
     {
         return "NotyPopLoadTemplate";
     }
 
-    function set_notifyStyle($notifyStyle)
+    public function set_notifyStyle($notifyStyle)
     {
         if ($notifyStyle != 1) {
             $this->notifyStyle = 0;

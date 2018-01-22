@@ -6,7 +6,7 @@ use Exception;
 
 class GetuiException extends Exception
 {
-    var $requestId;
+    public $requestId;
 
     public function __construct($requestId, $message, $e)
     {

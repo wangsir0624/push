@@ -4,24 +4,24 @@ namespace Wangjian\Push\Sdk\Getui\IGetui;
 
 class IGtAppMessage extends IGtMessage
 {
-    var $appIdList;
-    var $phoneTypeList;
-    var $provinceList;
-    var $tagList;
-    var $conditions;
-    var $speed = 0;
+    public $appIdList;
+    public $phoneTypeList;
+    public $provinceList;
+    public $tagList;
+    public $conditions;
+    public $speed = 0;
 
-    function __construct()
+    public function __construct()
     {
         parent::__construct();
     }
 
-    function get_appIdList()
+    public function get_appIdList()
     {
         return $this->appIdList;
     }
 
-    function set_appIdList($appIdList)
+    public function set_appIdList($appIdList)
     {
         $this->appIdList = $appIdList;
     }
@@ -29,7 +29,7 @@ class IGtAppMessage extends IGtMessage
     /**
      * @deprecated deprecated since version 4.0.0.3
      */
-    function get_phoneTypeList()
+    public function get_phoneTypeList()
     {
         return $this->phoneTypeList;
     }
@@ -37,7 +37,7 @@ class IGtAppMessage extends IGtMessage
     /**
      * @deprecated deprecated since version 4.0.0.3
      */
-    function set_phoneTypeList($phoneTypeList)
+    public function set_phoneTypeList($phoneTypeList)
     {
         $this->phoneTypeList = $phoneTypeList;
     }
@@ -45,7 +45,7 @@ class IGtAppMessage extends IGtMessage
     /**
      * @deprecated deprecated since version 4.0.0.3
      */
-    function get_provinceList()
+    public function get_provinceList()
     {
         return $this->provinceList;
     }
@@ -53,7 +53,7 @@ class IGtAppMessage extends IGtMessage
     /**
      * @deprecated deprecated since version 4.0.0.3
      */
-    function set_provinceList($provinceList)
+    public function set_provinceList($provinceList)
     {
         $this->provinceList = $provinceList;
     }
@@ -61,7 +61,7 @@ class IGtAppMessage extends IGtMessage
     /**
      * @deprecated deprecated since version 4.0.0.3
      */
-    function get_tagList()
+    public function get_tagList()
     {
         return $this->tagList;
     }
@@ -69,7 +69,7 @@ class IGtAppMessage extends IGtMessage
     /**
      * @deprecated deprecated since version 4.0.0.3
      */
-    function set_tagList($tagList)
+    public function set_tagList($tagList)
     {
         $this->tagList = $tagList;
     }
@@ -84,12 +84,12 @@ class IGtAppMessage extends IGtMessage
         $this->conditions = $conditions;
     }
 
-    function get_speed()
+    public function get_speed()
     {
         return $this->speed;
     }
 
-    function set_speed($speed)
+    public function set_speed($speed)
     {
         $this->speed = $speed;
     }

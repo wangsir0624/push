@@ -105,10 +105,9 @@ class GTConfig
         $value = getenv($key);
         if ($value != null) {
             return $value;
-        } else
-            if ($oldKey != null) {
-                $value = getenv($oldKey);
-            }
+        } elseif ($oldKey != null) {
+            $value = getenv($oldKey);
+        }
         if ($value == null) {
             return $defaultValue;
         } else {

@@ -2,15 +2,15 @@
 
 namespace Wangjian\Push\Sdk\Getui\IGetui\Utils;
 
-Class ApnsUtils
+class ApnsUtils
 {
-    static function validatePayloadLength($locKey, $locArgs, $message, $actionLocKey, $launchImage, $badge, $sound, $payload, $contentAvailable)
+    public static function validatePayloadLength($locKey, $locArgs, $message, $actionLocKey, $launchImage, $badge, $sound, $payload, $contentAvailable)
     {
         $json = ApnsUtils:: processPayload($locKey, $locArgs, $message, $actionLocKey, $launchImage, $badge, $sound, $payload, $contentAvailable);
         return strlen($json);
     }
 
-    static function processPayload($locKey, $locArgs, $message, $actionLocKey, $launchImage, $badge, $sound, $payload, $contentAvailable)
+    public static function processPayload($locKey, $locArgs, $message, $actionLocKey, $launchImage, $badge, $sound, $payload, $contentAvailable)
     {
         $isValid = false;
         $pb = new Payload();

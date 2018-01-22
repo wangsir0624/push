@@ -6,13 +6,13 @@ class IGtAPNPayload
 {
     public static $PAYLOAD_MAX_BYTES = 2048;
 
-    var $APN_SOUND_SILENCE = "com.gexin.ios.silence";
-    var $customMsg = array();
-    var $badge = -1;
-    var $sound = "default";
-    var $contentAvailable = 0;
-    var $category;
-    var $alertMsg;
+    public $APN_SOUND_SILENCE = "com.gexin.ios.silence";
+    public $customMsg = array();
+    public $badge = -1;
+    public $sound = "default";
+    public $contentAvailable = 0;
+    public $category;
+    public $alertMsg;
 
     public function get_payload()
     {
@@ -69,5 +69,3 @@ class IGtAPNPayload
         }
     }
 }
-
-?>

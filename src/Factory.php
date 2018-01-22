@@ -15,9 +15,9 @@ class Factory
         $driver = $configs['driver'];
         $createMethod = 'create' . ucfirst($driver) . 'Adapter';
 
-        if(method_exists(__CLASS__, $createMethod)) {
+        if (method_exists(__CLASS__, $createMethod)) {
             $adapter = call_user_func([__CLASS__, $createMethod], $configs);
-        } else if(key_exists($createMethod, self::$creators)) {
+        } elseif (key_exists($createMethod, self::$creators)) {
             $adapter = call_user_func(self::$creators[$createMethod], $configs);
         } else {
             throw new Exception('unsupported driver');
@@ -41,6 +41,5 @@ class Factory
 
     protected static function createGetuiAdapter($configs)
     {
-
     }
 }

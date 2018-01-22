@@ -8,8 +8,8 @@ use Wangjian\Push\Sdk\Getui\IGetui\Req\ActionChain_Type;
 
 class IGtTransmissionTemplate extends IGtBaseTemplate
 {
-    var $transmissionType;
-    var $transmissionContent;
+    public $transmissionType;
+    public $transmissionContent;
 
     public function getActionChain()
     {
@@ -47,22 +47,22 @@ class IGtTransmissionTemplate extends IGtBaseTemplate
         return $actionChains;
     }
 
-    function get_transmissionContent()
+    public function get_transmissionContent()
     {
         return $this->transmissionContent;
     }
 
-    function get_pushType()
+    public function get_pushType()
     {
         return 'TransmissionMsg';
     }
 
-    function set_transmissionType($transmissionType)
+    public function set_transmissionType($transmissionType)
     {
         $this->transmissionType = $transmissionType;
     }
 
-    function set_transmissionContent($transmissionContent)
+    public function set_transmissionContent($transmissionContent)
     {
         $this->transmissionContent = $transmissionContent;
     }

@@ -12,9 +12,9 @@ class AppConditions
     const TAG = "tag";
 
     //条件
-    var $condition = array();
+    public $condition = array();
 
-    function __call($name, $args)
+    public function __call($name, $args)
     {
         if ($name == 'addCondition') {
             switch (count($args)) {
@@ -32,7 +32,7 @@ class AppConditions
         }
     }
 
-    function addCondition3($key, $values, $optType = 0)
+    public function addCondition3($key, $values, $optType = 0)
     {
         $item = array();
         $item["key"] = $key;
@@ -43,15 +43,13 @@ class AppConditions
         return $this;
     }
 
-    function addCondition2($key, $values)
+    public function addCondition2($key, $values)
     {
         return $this->addCondition3($key, $values, 0);
     }
 
-    function getCondition()
+    public function getCondition()
     {
         return $this->condition;
     }
 }
-
-?>

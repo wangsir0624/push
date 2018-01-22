@@ -8,31 +8,31 @@ use Wangjian\Push\Sdk\Getui\IGetui\Utils\HttpManager;
 use Wangjian\Push\Sdk\Getui\IGetui\IGtListMessage;
 use Wangjian\Push\Sdk\Getui\IGetui\Utils\LangUtils;
 
-Class IGtPush
+class IGtPush
 {
-    var $appkey; //第三方 标识
-    var $masterSecret; //第三方 密钥
-    var $format = "json"; //默认为 json 格式
-    var $host = '';
-    var $needDetails = false;
-    static $appkeyUrlList = array();
-    var $domainUrlList = array();
-    var $useSSL = NULL; //是否使用https连接 以该标志为准
+    public $appkey; //第三方 标识
+    public $masterSecret; //第三方 密钥
+    public $format = "json"; //默认为 json 格式
+    public $host = '';
+    public $needDetails = false;
+    public static $appkeyUrlList = array();
+    public $domainUrlList = array();
+    public $useSSL = null; //是否使用https连接 以该标志为准
 
-    public function __construct($domainUrl, $appkey, $masterSecret, $ssl = NULL)
+    public function __construct($domainUrl, $appkey, $masterSecret, $ssl = null)
     {
         $this->appkey = $appkey;
         $this->masterSecret = $masterSecret;
 
         $domainUrl = trim($domainUrl);
 
-        if ($ssl == NULL && $domainUrl != NULL && strpos(strtolower($domainUrl), "https:") === 0) {
+        if ($ssl == null && $domainUrl != null && strpos(strtolower($domainUrl), "https:") === 0) {
             $ssl = true;
         }
 
-        $this->useSSL = ($ssl == NULL ? false : $ssl);
+        $this->useSSL = ($ssl == null ? false : $ssl);
 
-        if ($domainUrl == NULL || strlen($domainUrl) == 0) {
+        if ($domainUrl == null || strlen($domainUrl) == 0) {
             $this->domainUrlList = GTConfig::getDefaultDomainUrl($this->useSSL);
         } else {
             $this->domainUrlList = array($domainUrl);
@@ -85,7 +85,7 @@ Class IGtPush
         return $urlList;
     }
 
-    function httpPostJSON($url, $data, $gzip = false)
+    public function httpPostJSON($url, $data, $gzip = false)
     {
         if ($url == null) {
             $url = $this->host;
@@ -157,7 +157,7 @@ Class IGtPush
     }
 
 
-    function getSingleMessagePostData($message, $target, $requestId = null)
+    public function getSingleMessagePostData($message, $target, $requestId = null)
     {
         $params = array();
         $params["action"] = "pushMessageToSingleAction";
@@ -343,7 +343,9 @@ Class IGtPush
             }
         }
 
-        $rep = $this->httpPostJSON($this->host, $params);var_dump($rep); exit;
+        $rep = $this->httpPostJSON($this->host, $params);
+        var_dump($rep);
+        exit;
 
         if ($rep['result'] == 'ok') {
             return $rep['contentId'];
@@ -417,7 +419,8 @@ Class IGtPush
         $params["action"] = "alias_bind";
         $params["appkey"] = $this->appkey;
         $params["appid"] = $appId;
-        $params["alias"] = $alias;;
+        $params["alias"] = $alias;
+        ;
         $params["cid"] = $clientId;
 
         return $this->httpPostJSON($this->host, $params);

@@ -4,9 +4,9 @@ namespace Wangjian\Push\Sdk\Getui\IGetui\Utils;
 
 class ApiUrlRespectUtils
 {
-    static $appkeyAndFasterHost = array();
-    static $appKeyAndHost = array();
-    static $appkeyAndLastExecuteTime = array();
+    public static $appkeyAndFasterHost = array();
+    public static $appKeyAndHost = array();
+    public static $appkeyAndLastExecuteTime = array();
 
     public static function getFastest($appkey, $hosts)
     {

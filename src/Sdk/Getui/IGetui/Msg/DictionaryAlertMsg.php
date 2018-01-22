@@ -4,14 +4,14 @@ namespace Wangjian\Push\Sdk\Getui\IGetui\Msg;
 
 class DictionaryAlertMsg implements ApnMsg
 {
-    var $title;
-    var $body;
-    var $titleLocKey;
-    var $titleLocArgs = array();
-    var $actionLocKey;
-    var $locKey;
-    var $locArgs = array();
-    var $launchImage;
+    public $title;
+    public $body;
+    public $titleLocKey;
+    public $titleLocArgs = array();
+    public $actionLocKey;
+    public $locKey;
+    public $locArgs = array();
+    public $launchImage;
 
     public function get_alertMsg()
     {

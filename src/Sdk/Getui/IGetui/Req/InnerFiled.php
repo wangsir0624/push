@@ -6,9 +6,9 @@ use Wangjian\Push\Sdk\Getui\Protobuf\PBMessage;
 
 class InnerFiled extends PBMessage
 {
-    var $wired_type = PBMessage::WIRED_LENGTH_DELIMITED;
+    public $wired_type = PBMessage::WIRED_LENGTH_DELIMITED;
 
-    public function __construct($reader = NULL)
+    public function __construct($reader = null)
     {
         parent::__construct($reader);
         $this->fields["1"] = "PBString";
@@ -19,32 +19,32 @@ class InnerFiled extends PBMessage
         $this->values["3"] = "";
     }
 
-    function key()
+    public function key()
     {
         return $this->_get_value("1");
     }
 
-    function set_key($value)
+    public function set_key($value)
     {
         return $this->_set_value("1", $value);
     }
 
-    function val()
+    public function val()
     {
         return $this->_get_value("2");
     }
 
-    function set_val($value)
+    public function set_val($value)
     {
         return $this->_set_value("2", $value);
     }
 
-    function type()
+    public function type()
     {
         return $this->_get_value("3");
     }
 
-    function set_type($value)
+    public function set_type($value)
     {
         return $this->_set_value("3", $value);
     }

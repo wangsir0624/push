@@ -4,7 +4,7 @@ namespace Wangjian\Push\Sdk\Getui\IGetui\Utils;
 
 class Util
 {
-    static function json_encode($input)
+    public static function json_encode($input)
     {
         // 从 PHP 5.4.0 起, 增加了这个选项.
         if (defined('JSON_UNESCAPED_UNICODE')) {

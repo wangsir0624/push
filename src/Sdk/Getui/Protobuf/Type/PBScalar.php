@@ -25,5 +25,3 @@ class PBScalar extends PBMessage
         return $this->value;
     }
 }
-
-?>

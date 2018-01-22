@@ -4,7 +4,7 @@ namespace Wangjian\Push\Sdk\Getui\IGetui\Utils;
 
 class LogUtils
 {
-    static $debug = true;
+    public static $debug = true;
 
     public static function debug($log)
     {
