@@ -25,7 +25,7 @@
     }
   },
 
-  "autoload": {
+  "autoload-dev": {
     "psr-4": {
       "Wangjian\\Push\\Test\\": "tests"
     }

@@ -158,6 +158,7 @@ class Client
         $notification->setAppMasterSecret($this->appMasterSecret);
         $notification->setPredefinedKeyValue('appkey', $this->appKey);
         $notification->setPredefinedKeyValue('production_mode', $this->production);
+        $notification->setPredefinedKeyValue('timestamp', time());
 
         return $this;
     }

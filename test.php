@@ -16,7 +16,6 @@ $ios_configs = [
 ];
 
 $options = [
-    'timestamp' => time(),
     'ticker' => 'test',
     'title' => 'test',
     'text' => 'test',
